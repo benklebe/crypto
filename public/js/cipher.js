@@ -1,4 +1,6 @@
+var textToCipher = "";
+
 function retrieve()
 {
-     var textToCipher = document.getElementById("plaintext").value;
+     textToCipher = document.getElementById("plaintext").value;
 }
