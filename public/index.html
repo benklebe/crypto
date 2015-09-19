@@ -25,9 +25,9 @@
 
     <div id="body" class="container">
 
-      <p>
+      <p class="text-center">
         <div class="col-md-2 col-md-offset-4">
-        <h2>CRYPTO</h2>
+        <h2>CRYPTOüòÅÌ†ΩaÌ∏Å</h2>
         </div>
         <div class="col-md-4 col-md-offset-4">
           <h1 id="description">The EmojiCipher</h1>
@@ -35,21 +35,29 @@
       </p>
 
       <p>
-        <textarea id="plaintext" class="form-control" rows="10"
-          placeholder="Enter the text to be emoji'd or demoji'd..."></textarea>
+        <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+        <textarea id="plaintext" class="form-control" rows="10" style="resize: none;"
+          placeholder="Enter the text to be emoji'd..."></textarea>
+        </div>
+        <div class="col-md-5">
+          <textarea id="ciphertext" class="form-control" rows="10" style="resize: none;"
+            placeholder="Demoji'd plaintext."></textarea>
+        </div>
+        </div>
       </p>
 
       <p>
         <div class="row">
           <div class="form-group">
 
-            <div class="col-md-4 col-md-offset-2">
+            <div class="col-md-6 col-md-offset-3">
               <input type="text" class="form-control"
-                id="keyword1" placeholder="Keyword #1"></div>
+                id="keyword1" placeholder="Keyword"></div>
 
-            <div class="col-md-4">
+            <!--<div class="col-md-4">
               <input type="text" class="form-control"
-                id="keyword2" placeholder="Keyword #2"></div>
+                id="keyword2" placeholder="Keyword #2"></div>-->
 
           </div>
         </div>
@@ -57,14 +65,14 @@
 
       <p>
         <div class="row">
-          <div class="col-md-1 col-md-offset-2">
+          <div class="col-md-1 col-md-offset-3">
             <button id="encrypt" type="button" class="btn btn-danger"
-            onclick="encrypt();">Encrypt</button>
+              onclick="encrypt();">Encrypt</button>
           </div>
 
-          <div class="col-md-1 col-md-offset-6">
+          <div class="col-md-1 col-md-offset-4">
             <button id="decrypt" type="button" class="btn btn-success"
-            onclick="decrypt();">Decrypt</button>
+              onclick="decrypt();">Decrypt</button>
           </div>
         </div>
       </p>
