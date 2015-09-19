@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "EmojiCipher": {
+      "applicationId": "Oem7VeZAWzyChJRoJyZxbUT4cFro5KmqLxoQKQMK"
+    },
+    "_default": {
+      "link": "EmojiCipher"
+    }
+  }
+}
