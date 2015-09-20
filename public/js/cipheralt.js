@@ -91,6 +91,11 @@ function encrypt()
     for (var i = 0; i < message.length; i++) {
         alert(encryptionLevelOneArray[i]);
     }
+
+     for (var k = 0; k < message.length; k++)
+    {
+    document.getElementById("ciphertext").innerHTML += encryptionLevelOneArray[k];
+    }
 }
 
 function decrypt()
@@ -99,13 +104,15 @@ function decrypt()
     var keywordOne = document.getElementById('keyword1').value;   //gets keyword1
     //var keywordTwo = document.getElementById('keyword2').value;   //gets keyword2
     var decryption = [];
+    var z = 0;
+    //decryption[2]=123123;
+    //console.log(decryption[2]);
     var keywordOneArray = [];   //set array
     //var keywordTwoArray = [];   //set array
     var keywordOneArrayRepeated = [];  //set array
     var messageArray = [];
     var encryptionLevelOneArray = [];
-    //var keywordTwoArrayRepeated = [];
-
+    //var keywordTwoArrayRepeated = [];🍑
 
     for (var i = 0; i < keywordOne.length; i++)
         {
@@ -116,15 +123,28 @@ function decrypt()
             {
                 messageArray[k] = message.charCodeAt(k) - 96;
             }
+    for (var m = 0; m < message.length; m++)
+    {
+        if (z < keywordOne.length) {
+            keywordOneArrayRepeated[m] = keywordOneArray[z] - 96;
+            z++;
+        }
 
+        else {
+            z = 0;
+            keywordOneArrayRepeated[m] = keywordOneArray[z] - 96;
+            z++;
+        }
+    }
     for (var x = 0; x < message.length; x++)
         {
             decryption[x] = (messageArray[x] - keywordOneArrayRepeated[x]+ 1);
+            console.log(messageArray[x]);
+            console.log(keywordOneArrayRepeated[x]);
         }
 
     for (var k = 0; k < message.length; k++)
     {
-        console.log(decryption[k]);
-    //document.getElementById("ciphertext").innerHTML += decryption[k];
+       // document.getElementById("ciphertext").innerHTML += decryption[k];
     }
 }
