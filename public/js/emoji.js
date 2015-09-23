@@ -1,8 +1,7 @@
-var textToCipher = "";
-
 function encrypt()
 {
     var message = document.getElementById("plaintext").value; //get message into string
+    message = message.toLowerCase().replace(/[^a-z]+/g, "");
     var z = 0;
     var y = 0;
     var keywordOne = document.getElementById('keyword1').value;   //gets keyword1
@@ -26,7 +25,7 @@ function encrypt()
     }*/
 
 
-    for (var k = 0; k < message.length; k++)  // converts message to numbers
+    for (var k = 0; k <  message.length; k++)  // converts message to numbers
     {
         messageArray[k] = message.charCodeAt(k) - 96;
     }
@@ -79,72 +78,80 @@ function encrypt()
 
             //1st level of encryption//
     var finalencryptionString = "";
+    document.getElementById("ciphertext").innerHTML = "";
 
     for (var x = 0; x < message.length; x++)
     {
-        encryptionLevelOneArray[x] = (messageArray[x] + keywordOneArrayRepeated[x]- 1) % 25;
+        encryptionLevelOneArray[x] = (messageArray[x] + keywordOneArrayRepeated[x]) % 26;
         if(encryptionLevelOneArray[x]==1)
-            finalencryptionString = "🎳";
+            finalencryptionString += "🎳";
         else if( encryptionLevelOneArray[x]==2)
-            finalencryptionString = "🏂";
+            finalencryptionString += "🏂";
         else if( encryptionLevelOneArray[x]==3)
-            finalencryptionString = "🌁";
+            finalencryptionString += "🌁";
         else if( encryptionLevelOneArray[x]==4)
-            finalencryptionString = "🌉";
+            finalencryptionString += "🌉";
         else if( encryptionLevelOneArray[x]==5)
-            finalencryptionString = "🌋";
+            finalencryptionString += "🌋";
         else if( encryptionLevelOneArray[x]==6)
-            finalencryptionString = "🌌";
+            finalencryptionString += "🌌";
         else if( encryptionLevelOneArray[x]==7)
-            finalencryptionString = "🌏";
+            finalencryptionString += "🌏";
         else if( encryptionLevelOneArray[x]==8)
-            finalencryptionString = "🌑";
+            finalencryptionString += "🌑";
         else if( encryptionLevelOneArray[x]==9)
-            finalencryptionString = "🌓";
+            finalencryptionString += "🌓";
         else if( encryptionLevelOneArray[x]==10)
-            finalencryptionString = "🌔";
+            finalencryptionString += "🌔";
         else if( encryptionLevelOneArray[x]==11)
-            finalencryptionString = "🌕";
+            finalencryptionString += "🌕";
         else if( encryptionLevelOneArray[x]==12)
-            finalencryptionString = "🌛";
+            finalencryptionString += "🌛";
         else if( encryptionLevelOneArray[x]==13)
-            finalencryptionString = "🌠";
+            finalencryptionString += "🌠";
         else if( encryptionLevelOneArray[x]==14)
-            finalencryptionString = "🌰";
+            finalencryptionString += "🌰";
         else if( encryptionLevelOneArray[x]==15)
-            finalencryptionString = "🍏";
+            finalencryptionString += "🍏";
         else if( encryptionLevelOneArray[x]==16)
-            finalencryptionString = "🌱";
+            finalencryptionString += "🌱";
         else if( encryptionLevelOneArray[x]==17)
-            finalencryptionString = "🌼";
+            finalencryptionString += "🌼";
         else if( encryptionLevelOneArray[x]==18)
-            finalencryptionString = "🌽";
+            finalencryptionString += "🌽";
         else if( encryptionLevelOneArray[x]==19)
-            finalencryptionString = "🌿";
+            finalencryptionString += "🌿";
         else if( encryptionLevelOneArray[x]==20)
-            finalencryptionString = "🍄";
+            finalencryptionString += "🍄";
         else if( encryptionLevelOneArray[x]==21)
-            finalencryptionString = "🍇";
+            finalencryptionString += "🍇";
         else if( encryptionLevelOneArray[x]==22)
-            finalencryptionString = "🍈";
+            finalencryptionString += "🍈";
         else if( encryptionLevelOneArray[x]==23)
-            finalencryptionString = "🍌";
+            finalencryptionString += "🍌";
         else if( encryptionLevelOneArray[x]==24)
-            finalencryptionString = "🍍";
+            finalencryptionString += "🍍";
         else if( encryptionLevelOneArray[x]==25)
-            finalencryptionString = "🍑";
+            finalencryptionString += "🍑";
         else if( encryptionLevelOneArray[x]==26)
-            finalencryptionString = "🍒";
-        document.getElementById("ciphertext").innerHTML += finalencryptionString;
+            finalencryptionString += "🍒";
+        // document.getElementById("ciphertext").innerHTML += finalencryptionString;
     }
+
+    $("#ciphertext").val(finalencryptionString);
 
 
 //    if(...==1)finalEncryptionString+="ðŸ˜";
 
-
+    return 0;
 
 
 }
+$(function(){
+    $( "#encryption" ).click(function() {
+      encrypt();
+    });
+});
 
 
 
