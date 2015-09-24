@@ -1,3 +1,4 @@
+@@ -0,0 +1,195 @@
 var textToCipher = "";
 
 function encrypt()
@@ -10,7 +11,7 @@ function encrypt()
 
     var keywordOneArray = [];   //set array
     //var keywordTwoArray = [];   //set array
-    var keywordOneArrayRepeated = [];  //set array
+    var keywordOneArrayRepeated = [];  //set messageArray
     var messageArray = [];
     var encryptionLevelOneArray = [];
     //var keywordTwoArrayRepeated = [];
@@ -160,8 +161,90 @@ function decrypt{
     var keywordOneArrayRepeated = [];  //set array
     var messageArray = [];
     var encryptionLevelOneArray = [];
+    var finalencryptionString = [];
     //var keywordTwoArrayRepeated = [];
+    for (var i = 0; i < message.length; i++)
+    {
+    	encryptionLevelOneArray[i] = message[i];
+    	keywordOneArray[i] = keywordOne[i];
+    }
 
+   for (var x = 0; x < message.length; x++)
+    {
+        //encryptionLevelOneArray[x] = (messageArray[x] + keywordOneArrayRepeated[x]- 1) % 25;
+
+        if(encryptionLevelOneArray[x] == "🎳")
+            finalencryptionString = 1;
+        else if( encryptionLevelOneArray[x] == "🏂")
+            finalencryptionString = 2;
+        else if( encryptionLevelOneArray[x] == "🌁")
+            finalencryptionString = 3;
+        else if( encryptionLevelOneArray[x] == "🌉")
+            finalencryptionString = 4;
+        else if( encryptionLevelOneArray[x] == "🌋")
+            finalencryptionString = 5;
+        else if( encryptionLevelOneArray[x] == "🌌")
+            finalencryptionString = 6;
+        else if( encryptionLevelOneArray[x] == "🌏")
+            finalencryptionString = 7;
+        else if( encryptionLevelOneArray[x] == "🌑")
+            finalencryptionString = 8;
+        else if( encryptionLevelOneArray[x] == "🌓")
+            finalencryptionString = 9;
+        else if( encryptionLevelOneArray[x] == "🌔")
+            finalencryptionString = 10;
+        else if( encryptionLevelOneArray[x] == "🌕")
+            finalencryptionString = 11;
+        else if( encryptionLevelOneArray[x] == "🌛")
+            finalencryptionString = 12;
+        else if( encryptionLevelOneArray[x] == "🌠")
+            finalencryptionString = 13;
+        else if( encryptionLevelOneArray[x] == "🌰")
+            finalencryptionString = 14;
+        else if( encryptionLevelOneArray[x] == "🍏")
+            finalencryptionString = 15;
+        else if( encryptionLevelOneArray[x] == "🌱")
+            finalencryptionString = 16;
+        else if( encryptionLevelOneArray[x] == "🌼")
+            finalencryptionString = 17;
+        else if( encryptionLevelOneArray[x] == "🌽")
+            finalencryptionString = 18;
+        else if( encryptionLevelOneArray[x] == "🌿")
+            finalencryptionString = 19;
+        else if( encryptionLevelOneArray[x] == "🍄")
+            finalencryptionString = 20;
+        else if( encryptionLevelOneArray[x] == "🍇")
+            finalencryptionString = 21;
+        else if( encryptionLevelOneArray[x] == "🍈")
+            finalencryptionString = 22;
+        else if( encryptionLevelOneArray[x] == "🍌")
+            finalencryptionString = 23;
+        else if( encryptionLevelOneArray[x] == "🍍")
+            finalencryptionString = 24;
+        else if( encryptionLevelOneArray[x] == "🍑")
+            finalencryptionString = 25;
+        else if( encryptionLevelOneArray[x] == "🍒")
+    }
+        for (var i = 0; i < message.length; i++)
+        {
+        	finalencryptionString[i] = finalencryptionString[i]++;
+        }
+
+        for (var i = 0; i < message.length; i++)
+        {
+        	messageArray[i] = finalencryptionString[i] - keywordOneArray[i];
+        }
+
+	for (var i = 0; i < message.length; i++)
+	{
+        messageArray[i] = String.fromCharCode(messageArray[i]);
+	}
+	for (var i = 0; i < message.length; i++)
+	{
+	document.getElementById("ciphertext").innerHTML += messageArray[i];
+	}
+
+/*
     for (var i = 0; i < keywordOne.length; i++)
     {
         keywordOneArray[i] = keywordOne.charCodeAt(i);
@@ -173,7 +256,7 @@ function decrypt{
     }*/
 
 
-    for (var k = 0; k < message.length; k++)  // converts message to numbers
+    /*for (var k = 0; k < message.length; k++)  // converts message to numbers
     {
         messageArray[k] = message.charCodeAt(k) - 96;
     }
@@ -189,7 +272,7 @@ function decrypt{
             z = 0;
             keywordOneArrayRepeated[m] = keywordOneArray[z] - 96;
             z++;
-        }
+        }*/
 
     }
 }
