@@ -1,6 +1,17 @@
-var textToCipher = "";
-
 function decrypt() {
+
+    function emojiStringToArray(str) {
+      split = str.split(/([\uD800-\uDBFF][\uDC00-\uDFFF])/);
+      arr = [];
+      for (var i=0; i<split.length; i++) {
+        char = split[i]
+        if (char !== "") {
+          arr.push(char);
+        }
+      }
+      return arr;
+    }
+
     var Stringtonum = [];
     var z = 0;
     var y = 0;
@@ -10,30 +21,33 @@ function decrypt() {
     var messageArray = [];
     var keywordOne = document.getElementById('keyword1').value;
     var message = document.getElementById("plaintext").value; //get message into string
-    for (var k = 0; k < message.length; k++)  // converts message to numbers
-    {
-        messageArray[k] = message.charCodeAt(k);
-    }
+    var finalUnencryptedString = "";    // for (var k = 0; k < message.length; k++)  // converts message to numbers
+    // {
+    //     messageArray[k] = message.charCodeAt(k);
+    // }
+
+    messageArray = emojiStringToArray(message);
+
     for (var i = 0; i < keywordOne.length; i++)
     {
-        keywordOneArray[i] = keywordOne.charCodeAt(i);
+        keywordOneArray[i] = keywordOne.charCodeAt(i) - 96;
     }
-    for (var m = 0; m < message.length; m++)
+    for (var m = 0; m < messageArray.length; m++)
     {
         if (z < keywordOne.length) {
-            keywordOneArrayRepeated[m] = keywordOneArray[z] - 96;
+            keywordOneArrayRepeated[m] = keywordOneArray[z];
             z++;
         }
 
         else {
             z = 0;
-            keywordOneArrayRepeated[m] = keywordOneArray[z] - 96;
+            keywordOneArrayRepeated[m] = keywordOneArray[z];
             z++;
         }
 
     }
 
-    for (var x = 0; x < message.length; x++)
+    for (var x = 0; x < messageArray.length; x++)
     {
         if(messageArray[x]=="🎳")
             Stringtonum[x] = 1;
@@ -87,10 +101,27 @@ function decrypt() {
             Stringtonum[x] = 25;
         else if( messageArray[x]=="🍒")
             Stringtonum[x] = 26;
-        messageArray[x] = (Stringtonum[x] - keywordOneArrayRepeated[x]+ 1) % 25;
+        messageArray[x] = (Stringtonum[x] - keywordOneArrayRepeated[x]) % 26;
+        if (messageArray[x] < 0)
+            messageArray[x] = 26 + messageArray[x];
+        finalUnencryptedString += String.fromCharCode(messageArray[x] + 96);
+
+
     }
-    for(var i=0; i<message.length; i++)
-    {
-        document.getElementById("ciphertext").innerHTML += messageArray[i];
-    }
+
+    // document.getElementById("ciphertext").innerHTML = "";
+    $("#ciphertext").val(finalUnencryptedString);
+
+    // for(var i=0; i<messageArray.length; i++)
+    // {
+    //     document.getElementById("ciphertext").innerHTML +=  String.fromCharCode(messageArray[i]+96);
+    // }
+
+    return 0;
 }
+
+$(function(){
+    $( "#decryption" ).click(function() {
+      decrypt();
+    });
+});
