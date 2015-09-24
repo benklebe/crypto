@@ -111,20 +111,46 @@ function decrypt()
 {
   var message = document.getElementById("input").value; //get message into string
   var keywordOne = document.getElementById('keyword1').value;   //gets keyword 1
+  var messageArray = [];
+  var keywordOneArray = [];
+  var keywordOneArrayRepeated = [];
   var messageAfterKeyword = [];
   var convertedMessage = [];
+  var z = 0;
 
-//step 1 --> subtract 1 to each value
+//step 1 --> subtract 1 from each value
   for (var i = 0; i < message.length; i++)
   {
-    message[i]--;
-    console.log(message[i]);
+    messageArray[i] = parseInt(message);
+    messageArray[i]--;
   }
 
-//step 2 --> subtract keyword from main string, also add 96 in order to convert back to ascii code
+//step 2 --> convert keyword to numbers
+  for (var i = 0; i < keywordOne.length; i++)
+  {
+      keywordOneArray[i] = keywordOne.charCodeAt(i) - 96;
+  }
+
+//step 5 repeat keyword 1 into an array
+  for (var m = 0; m < message.length; m++) // repeats thbe keyword into a seprate array
+  {                                        // and subtracts 96 to make numbers more reasonable
+      if (z < keywordOne.length) {
+          keywordOneArrayRepeated[m] = keywordOneArray[z];
+          z++;
+        }
+        else {
+          z = 0;
+          keywordOneArrayRepeated[m] = keywordOneArray[z];
+          z++;
+        }
+      }
+
+
+
+//step 4 --> subtract keyword from main string, also add 96 in order to convert back to ascii code
   for (var i = 0; i < message.length; i++)
   {
-    messageAfterKeyword[i] = message[i] - keywordOne[i] + 96;
+    messageAfterKeyword[i] = (messageArray[i] - keywordOneArrayRepeated[i]) + 96;
   }
 
 //step 4 --> convert back to characters
