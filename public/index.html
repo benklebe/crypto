@@ -1,60 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-  <head>
-  <title>EmojiCipher</title>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/crypto.css" rel="stylesheet">
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-    <script src="js/emoji.js"></script>
-    <script src="js/test.js"></script>
-
-  </head>
-  <body>
-
-    <div id="body" class="container">
-
-      <p class="text-center" id="crypto">CRYPTO</p>
-      <p class="text-center" id="description">The EmojiCipher</p>
-=======
 <head>
   <title>Crypto</title>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
->>>>>>> master
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/crypto.css" rel="stylesheet">
 
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <script src="js/emoji.js"></script>
+  <script src="js/test.js"></script>
 </head>
 <body>
-
   <div id="body" class="container-fluid">
 
     <p>
@@ -77,63 +49,38 @@
     </div>
 
     <div class="row">
+      <p>
 
         <div class="col-xs-5 col-xs-offset-1">
-<p>
           <input type="text" class="form-control" id="keyword1" placeholder="Keyword">
-</p>
         </div>
 
-        <!--<div class="col-md-4">
-        <input type="text" class="form-control"
-        id="keyword2" placeholder="Keyword #2"></div>-->
-
+      </p>
     </div>
 
     <div class="row">
-
       <p>
-        <div class="col-xs-1 col-xs-offset-1">
-          <button id="encryption" type="button" class="btn btn-primary"
-          onclick="encrypt();">Encrypt</button>
-        </div>
-      </p>
 
+        <div class="col-md-1 col-md-offset-1">
+          <button id="encryption" type="button"
+          class="btn btn-primary">Encrypt</button>
+        </div>
+
+        <div class="col-md-1">
+          <button id="decryption" type="button"
+          class="btn btn-success">Decrypt</button>
+        </div>
+
+      </p>
     </div>
 
-    <div class="row">
-
-      <p>
-<<<<<<< HEAD
-        <div class="row">
-          <div class="col-md-1 col-md-offset-1">
-            <button id="encryption" type="button" class="btn btn-primary"
-              >Encrypt</button>
-          </div>
-          <div class="col-md-1 col-md-offset-1">
-            <button id="decryption" type="button" class="btn btn-success"
-              >Decrypt</button>
-          </div>
-=======
-        <div class="col-xs-1 col-xs-offset-1">
-          <button id="decryption" type="button" class="btn btn-success"
-          onclick="decrypt();">Decrypt</button>
->>>>>>> master
-        </div>
-      </p>
-
-    </div>
-<<<<<<< HEAD
-    
-=======
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/EmojiCipher1.1.js"></script>
-    <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
-    <link rel="stylesheet" href="css/crypto.css">
->>>>>>> master
-  </body>
-  </html>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/EmojiCipher1.1.js"></script>
+  <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
+  <link rel="stylesheet" href="css/crypto.css">
+</body>
+</html>
