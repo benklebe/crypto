@@ -9,25 +9,16 @@ function encrypt()
   >>>>>>> master
   var z = 0;
   var y = 0;
-  // var keywordTwo = document.getElementById('keyword2').value;   //gets keyword2
 
   var keywordOneArray = [];   //set array
-  //var keywordTwoArray = [];   //set array
   var keywordOneArrayRepeated = [];  //set array
   var messageArray = [];
   var encryptionLevelOneArray = [];
-  //var keywordTwoArrayRepeated = [];
 
   for (var i = 0; i < keywordOne.length; i++)
   {
     keywordOneArray[i] = keywordOne.charCodeAt(i);
   }
-
-  /*for (var j = 0; j < keywordTwo.length; j++)
-  {
-  keywordTwoArray[j] = keywordTwo.charCodeAt(j);
-}*/
-
 
 for (var k = 0; k <  message.length; k++)  // converts message to numbers
 {
