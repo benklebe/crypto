@@ -1,16 +1,12 @@
 function decrypt() {
-
-    var Stringtonum = [];
     var z = 0;
-    var y = 0;
     var keywordOneArray = [];   //set array
     var keywordOneArrayRepeated = [];  //set array
-    var messageArray = [];
     var keywordOne = document.getElementById('keyword1').value;
     var message = document.getElementById("plaintext").value; //get message into string
     var finalUnencryptedString = "";    // for (var k = 0; k < message.length; k++)  // converts message to numbers
 
-    messageArray = emojiStringToArray(message);
+    var messageArray = emojiStringToArray(message);
 
     for (var i = 0; i < keywordOne.length; i++)
     {
@@ -22,7 +18,6 @@ function decrypt() {
             keywordOneArrayRepeated[m] = keywordOneArray[z];
             z++;
         }
-
         else {
             z = 0;
             keywordOneArrayRepeated[m] = keywordOneArray[z];
@@ -45,7 +40,7 @@ function decrypt() {
 }
 
 $(function(){
-    $( "#decryption" ).click(function() {
+    $("#decryption").click(function() {
       decrypt();
     });
 });
